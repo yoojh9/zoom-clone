@@ -89,4 +89,20 @@ server.listen(3000, handleListen);
 
 ## 4) WebSocket Messages
 
--
+-   https://github.com/yoojh9/zoom-clone/commit/b7c41ba85730672897e088a284ca0c8f8dfc3d35
+
+<br>
+
+## 5) Recap
+
+### (1) backend (server.js)
+
+-   WebSocket 서버를 만들고, connection이라는 이벤트를 listen하고 있다. connection이 생기면 socket에서 누가 연결했는지 알 수 있다. - socket이 connection을 종료(close)시키면, 예를 들어서 브라우저의 탭을 닫거나 컴퓨터가 잠자기 모드에 들어가는지 알 수 있고, 특정 socket에서 메세지를 받기를 기다릴 수 있다.
+-   backend에서는 특정 socket에 event listener를 등록했다. (! 서버에 eventListener를 등록한게 아님) 왜냐하면 이 event listener는 backend와 연결된 브라우저를 위한 것이다. 그러므로 새로운 브라우저가 서버에 들어오면 같은 이벤트 리스너를 등록시켜준다.
+-   socket.send()를 통해 backend에서 frontend로 메세지를 보낼 수 있다.
+
+### (2) frontend (app.js)
+
+-   브라우저에서는 backend와 connection을 열어준다.
+-   그리고 event listner를 등록했다.
+-   또한 socket.send()를 통해 frontend에서 backend로 메세지를 보낼 수도 있다.
