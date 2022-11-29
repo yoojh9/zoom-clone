@@ -36,3 +36,38 @@ $ npm install pug
 -   또한 연결되어 있기 때문에 원한다면 서버가 유저에게 메세지를 보낼 수 있다. 이는 bi-directional(양방향의) 연결이기 때문이다.
 -   다시 말하지만 이 모든 것들은 connection(연결) 중 일 때만 발생한다.
 -   WebSocket은 어떤 프로그래밍 언어에 국한되어 있지 않다. 단지 protocol이다.
+
+<br>
+
+## 2) WebSockets in NodeJS
+
+-   [ws](https://www.npmjs.com/package/ws)
+-   ws는 WebSocket의 implementation으로 핵심 core 기능만 있고 부가적인 기능이 없다.
+
+```
+$ npm i ws
+```
+
+-   express에 WebSocket 서버를 추가할 수 있다.
+
+-   이렇게 하면 localhost는 동일한 포트에서 http, ws request 두 개를 처리할 수 있다.
+
+<br>
+
+```javascript
+import express from "express";
+import http from "http";
+import WebSocket from "ws";
+
+const app = express();
+
+// ...생략
+
+const handleListen = () => console.log("Listening on http://localhost:3000");
+// app.listen(3000, handleListen);
+
+const server = http.createServer(app); // http 서버. http 서버 사용 안하면 안 만들어도 됨
+const wss = new WebSocket.Server({ server }); // websocket server. http 서버 위에 websocket 서버를 만듦.
+
+server.listen(3000, handleListen);
+```
