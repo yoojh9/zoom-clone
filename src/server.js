@@ -16,4 +16,10 @@ const handleListen = () => console.log('Listening on http://localhost:3000');
 const server = http.createServer(app); // http 서버. http 서버 사용 안하면 안 만들어도 됨
 const wss = new WebSocket.Server({ server }); // websocket server. http 서버 위에 websocket 서버를 만듦.
 
+const handleConnection = (socket) => {
+    console.log(socket);
+}
+
+wss.on("connection", handleConnection)
+
 server.listen(3000, handleListen);

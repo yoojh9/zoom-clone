@@ -51,6 +51,7 @@ $ npm i ws
 -   express에 WebSocket 서버를 추가할 수 있다.
 
 -   이렇게 하면 localhost는 동일한 포트에서 http, ws request 두 개를 처리할 수 있다.
+-   https://github.com/yoojh9/zoom-clone/commit/7d1e2035d0a07d96e227757afa3a950ae021716e
 
 <br>
 
@@ -71,3 +72,14 @@ const wss = new WebSocket.Server({ server }); // websocket server. http 서버 �
 
 server.listen(3000, handleListen);
 ```
+
+<br>
+
+## 3) WebSocket Event
+
+-   ws를 사용해서 backend와 frontend 사이의 connection을 만든다.
+-   프론트에서는 아무것도 설치할 필요 없이 브라우저에서 제공한다.
+-   https://developer.mozilla.org/ko/docs/Web/API/WebSocket
+-   webSocket은 브라우저와 서버 사이의 연결로, real-time으로 소통할 수 있다.
+-   backend와 frontend는 실시간으로 메세지를 주고 받을 수 있다.
+-   프로젝트에서 server.js(backend)의 socket은 연결된 브라우저를 뜻한다. app.js(front)의 socket은 서버로의 연결을 의미한다.
