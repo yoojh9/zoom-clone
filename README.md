@@ -83,3 +83,10 @@ server.listen(3000, handleListen);
 -   webSocket은 브라우저와 서버 사이의 연결로, real-time으로 소통할 수 있다.
 -   backend와 frontend는 실시간으로 메세지를 주고 받을 수 있다.
 -   프로젝트에서 server.js(backend)의 socket은 연결된 브라우저를 뜻한다. app.js(front)의 socket은 서버로의 연결을 의미한다.
+-   https://github.com/yoojh9/zoom-clone/commit/cd7f40a4c39aa7b7cde6548c69abca2505a3c4a3
+
+<br>
+
+## 4) WebSocket Messages
+
+-
