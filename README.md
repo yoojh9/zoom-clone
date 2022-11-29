@@ -104,5 +104,5 @@ server.listen(3000, handleListen);
 ### (2) frontend (app.js)
 
 -   브라우저에서는 backend와 connection을 열어준다.
--   그리고 event listner를 등록했다.
+-   그리고 event listener 등록했다.
 -   또한 socket.send()를 통해 frontend에서 backend로 메세지를 보낼 수도 있다.
