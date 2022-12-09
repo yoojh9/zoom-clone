@@ -21,14 +21,24 @@ wss.on("connection", (socket) => {
     console.log("Connected to Browser ✅");
     sockets.push(socket);
 
+    socket['nickname'] = 'Anonymous';
     socket.send("Hello!!!");
     socket.on("close", () => console.log('Disconnected from Browser ❌'));
     socket.on("message", message => {
         // console.log(message.toString('utf8'))
         // socket.send(message.toString('utf8'))
         const messageObj = JSON.parse(message.toString('utf-8'));
-        
-        sockets.forEach(aSocket => aSocket.send(message.toString('utf8'))); // 모든 소켓에 메세지를 보낼 수 있음
+
+        switch (messageObj.type) {
+            case "message":
+                sockets.forEach(aSocket => aSocket.send(`${socket.nickname} : ${messageObj.payload}`)); // 모든 소켓에 메세지를 보낼 수 있음
+                break;
+            case "nickname":
+                socket['nickname'] = messageObj.payload
+                break;
+            default:
+                break;
+        }
     });
 
 })

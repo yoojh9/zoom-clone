@@ -118,4 +118,13 @@ server.listen(3000, handleListen);
 
 ## 7) Nickname
 
--   part 1:
+-   part 1: https://github.com/yoojh9/zoom-clone/commit/955304fe0975a4f75486b9075d8c2daf0a58ced5
+
+-   socket 역시 객체이므로 어떤 데이터도 저장할 수 있음.
+-   아래 예제처럼 이런 식으로 소켓에 닉네임을 저장할 수 있음.
+
+```javascript
+socket["nickname"] = "Anonymous";
+```
+
+-   part2:
