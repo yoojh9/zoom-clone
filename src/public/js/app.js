@@ -13,10 +13,7 @@ socket.addEventListener("open", () => {
 })
 
 socket.addEventListener("message", (message) => {
-    console.log('New message:' , message.data)
-    const li = document.createElement("li");
-    li.innerText = message.data;
-    messageList.append(li);
+
 })
 
 socket.addEventListener("close", () => {
@@ -27,6 +24,11 @@ const handleSubmit = (event) => {
     event.preventDefault();
     const input = messageForm.querySelector("input");
     socket.send(makeMessage("message", input.value));
+
+    const li = document.createElement("li");
+    li.innerText = `You: ${input.value}`;
+    messageList.append(li);
+
     input.value = ""
 }
 

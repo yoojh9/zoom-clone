@@ -127,4 +127,9 @@ server.listen(3000, handleListen);
 socket["nickname"] = "Anonymous";
 ```
 
--   part2:
+-   part2: https://github.com/yoojh9/zoom-clone/commit/b5ab17dfd6a5e1e888131a28f380776c77269349
+
+## 8) Conclusion
+
+-   나를 제외하고 다른 사람들에게만 메세지를 보낼 수 있는 방법을 살펴보자.
+-   다음 섹션에서는 websocket을 쉽게 사용할 수 있게 해주는 framework를 사용해보자.
