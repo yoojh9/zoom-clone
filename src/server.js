@@ -26,6 +26,8 @@ wss.on("connection", (socket) => {
     socket.on("message", message => {
         // console.log(message.toString('utf8'))
         // socket.send(message.toString('utf8'))
+        const messageObj = JSON.parse(message.toString('utf-8'));
+        
         sockets.forEach(aSocket => aSocket.send(message.toString('utf8'))); // 모든 소켓에 메세지를 보낼 수 있음
     });
 

@@ -106,3 +106,16 @@ server.listen(3000, handleListen);
 -   브라우저에서는 backend와 connection을 열어준다.
 -   그리고 event listener 등록했다.
 -   또한 socket.send()를 통해 frontend에서 backend로 메세지를 보낼 수도 있다.
+
+<br><br>
+
+## 6) Chat
+
+-   일단 소켓에서 메세지를 받으면, 서버에서 모든 브라우저에 메세지를 전달하는 식으로 개발
+-   https://github.com/yoojh9/zoom-clone/commit/3d53744dce90185f97d4a5cbae0f0b94876a4850
+
+<br><br>
+
+## 7) Nickname
+
+-   part 1:
